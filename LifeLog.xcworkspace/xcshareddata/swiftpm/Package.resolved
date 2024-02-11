@@ -1,0 +1,95 @@
+{
+  "pins" : [
+    {
+      "identity" : "confettiswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simibac/ConfettiSwiftUI.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "469de4e43949815dc92570cc786922d8d1385b06"
+      }
+    },
+    {
+      "identity" : "horizoncalendar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/HorizonCalendar.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "ef635338f093b548c93ad804fba63c0ee5792daa"
+      }
+    },
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios.git",
+      "state" : {
+        "revision" : "f522990668c2f9132323a2e68d924c7dcb9130b4",
+        "version" : "4.4.0"
+      }
+    },
+    {
+      "identity" : "sfsymbolspickerforswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alessiorubicini/SFSymbolsPickerForSwiftUI.git",
+      "state" : {
+        "revision" : "336e6f59e83dc759703aa80ab7826df9d281233c",
+        "version" : "1.0.4"
+      }
+    },
+    {
+      "identity" : "swift-algorithms",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-algorithms.git",
+      "state" : {
+        "revision" : "f6919dfc309e7f1b56224378b11e28bab5bccc42",
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "swift-numerics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-numerics.git",
+      "state" : {
+        "revision" : "0a5bc04095a675662cf24757cc0640aa2204253b",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "swiftui-introspect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/SwiftUI-Introspect.git",
+      "state" : {
+        "revision" : "18e965f867e37a558ad13c12d330dbe047099180",
+        "version" : "1.1.2"
+      }
+    },
+    {
+      "identity" : "swipeable-view",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mroffmix/Swipeable-View.git",
+      "state" : {
+        "revision" : "1d2b22b0c97dbd5ac9e4cb16020ff5d0f4191760",
+        "version" : "0.2.2"
+      }
+    },
+    {
+      "identity" : "symbolpicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/xnth97/SymbolPicker.git",
+      "state" : {
+        "revision" : "e0601230feea4289760c0e5b68dbafa15aa59bfb",
+        "version" : "1.5.1"
+      }
+    },
+    {
+      "identity" : "systemimagepicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sbertix/SystemImagePicker.git",
+      "state" : {
+        "revision" : "d03c81b326107a267e9644b31ee415cee072130c",
+        "version" : "0.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -1,0 +1,11 @@
+<svg width="89" height="91" viewBox="0 0 89 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="43.5" cy="43.5" r="43.5" fill="#AED6EF"/>
+<circle cx="56.5" cy="38.5" r="4.5" fill="black"/>
+<path d="M36 53C41 53 44.5 53 52 53" stroke="black" stroke-width="3" stroke-linecap="round"/>
+<circle cx="31.5" cy="38.5" r="4.5" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M32.9588 76.7171C58.2567 78.8905 80.5277 60.1332 82.7023 34.8213C83.019 31.1354 82.892 27.5137 82.3659 24.0091C85.8778 30.97 87.5629 38.962 86.8464 47.3018C84.7899 71.2381 63.7294 88.976 39.8063 86.9207C24.6821 85.6213 12.0345 76.722 5.29663 64.3033C12.5857 71.2122 22.1771 75.7908 32.9588 76.7171Z" fill="#9ED1F0"/>
+<circle cx="16" cy="47" r="2" fill="#7BBBE7"/>
+<circle cx="23" cy="47" r="2" fill="#7BBBE7"/>
+<circle cx="65" cy="47" r="2" fill="#7BBBE7"/>
+<circle cx="72" cy="47" r="2" fill="#7BBBE7"/>
+</svg>

@@ -1,0 +1,9 @@
+/* 
+  Japanese.strings
+  LifeLog
+
+  Created by Genki on 1/12/24.
+  
+*/
+
+NSUserTrackingUsageDescription = "広告を最適化するためにトラッキング許可してください";

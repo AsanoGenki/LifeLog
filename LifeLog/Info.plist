@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>DeepLink</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>deeplinktest</string>
+			</array>
+		</dict>
+	</array>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-9856694313731412~8231624485</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>カレンダーは、イベントの表示に使用されます。</string>
+	<key>Privacy – Calendars Usage Description</key>
+	<string>カレンダーは、イベントの表示に使用されます。</string>
+	<key>SKAdNetworkIdentifier</key>
+	<string>cstr6suwn9.skadnetwork</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Caveat-SemiBold.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+</dict>
+</plist>
