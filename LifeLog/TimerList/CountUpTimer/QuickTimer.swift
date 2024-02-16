@@ -11,6 +11,7 @@ struct QuickTimer: View {
     @Binding var showStartQuickTimer: Bool
     @AppStorage("quickTimerName") var quickTimerName: String = ""
     @AppStorage("timerID") var timerID: UUID?
+    let userdefaults = UserDefaults(suiteName: "group.com.DeviceActivityMonitorExtension")
     var body: some View {
         let bounds = UIScreen.main.bounds
         let width = bounds.width
@@ -27,6 +28,7 @@ struct QuickTimer: View {
                 }
                 Button {
                     quickTimerName = ""
+                    userdefaults!.set("", forKey: "countUpTimer")
                     timerID = UUID()
                     showStartQuickTimer.toggle()
                 } label: {
