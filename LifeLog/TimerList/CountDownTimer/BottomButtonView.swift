@@ -11,6 +11,8 @@ import FamilyControls
 struct BottomButtonView: View {
     @ObservedObject var countDownTimerViewModel: CountDownTimerViewModel
     @EnvironmentObject var appBlockViewModel: AppBlockViewModel
+    @Binding var offset: Double
+    @AppStorage("timerOffset") var savedOffset: Double = 0
     @AppStorage(
         "setMinute",
         store: UserDefaults(suiteName: "group.com.DeviceActivityMonitorExtension")!
@@ -35,7 +37,8 @@ struct BottomButtonView: View {
                             .frame(width: 60, height: 60)
                     )
                     .onTapGesture {
-//                        setMinute = countDownTimerViewModel.countDownMinute
+                        savedOffset = offset
+                        setMinute = Int(sliderOffsetToString(offset: offset))!
                         userdefaults!.set(setMinute, forKey: "setMinute")
                         countDownTimerViewModel.start(minutes: setMinute)
                         showWidget.showCountDownWidget(title: "Timer", icon: "clock", startTimerDate: Date())
@@ -79,13 +82,13 @@ struct BottomButtonView: View {
 
 struct BottomButtonView_Previews: PreviewProvider {
     @State static var minute: Int = 0
-    @State static var offset: CGFloat = 0
+    @State static var offset: Double = 0
     @State static var endDate: Date = Date()
     @State static var showingSaveAlert = false
     static var previews: some View {
         BottomButtonView(
             countDownTimerViewModel: CountDownTimerViewModel(),
-            endDate: $endDate,
+            offset: $offset, endDate: $endDate,
             showingSaveAlert: $showingSaveAlert)
     }
 }

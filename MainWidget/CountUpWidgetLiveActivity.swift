@@ -18,6 +18,8 @@ struct CountUpWidgetAttributes: ActivityAttributes {
 }
 
 struct CountUpWidgetLiveActivity: Widget {
+    let userdefaults = UserDefaults(
+        suiteName: "group.com.DeviceActivityMonitorExtension")
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: CountUpWidgetAttributes.self) { context in
             ZStack {
@@ -27,7 +29,10 @@ struct CountUpWidgetLiveActivity: Widget {
                     VStack {
                         HStack {
                             Image(systemName: context.state.icon)
-                            Text(context.state.title == "" ? "Timer" : "\(context.state.title)")
+//                            Text(context.state.title == "" ? "Timer" : "\(context.state.title)")
+                            Text(userdefaults!.string(forKey: "countUpTimer") == "" ?
+                                 "Timer": userdefaults!.string(forKey: "countUpTimer")
+                                 ?? "Timer")
                             Spacer()
                         }.foregroundColor(Color("iconColor"))
                         HStack {

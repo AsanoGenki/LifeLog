@@ -11,8 +11,10 @@ import AudioToolbox
 struct CustomSlider<Content: View>: UIViewRepresentable {
     var content: Content
     var pickerCount: Int
-    @AppStorage("timerOffset") var offset: Double = 0
-    init(pickerCount: Int, @ViewBuilder content: @escaping () -> Content) {
+    @AppStorage("timerOffset") var savedOffset: Double = 0
+    @Binding var offset: Double
+    init(offset: Binding<Double>, pickerCount: Int, @ViewBuilder content: @escaping () -> Content) {
+        self._offset = offset
         self.content = content()
         self.pickerCount = pickerCount
     }
@@ -25,7 +27,8 @@ struct CustomSlider<Content: View>: UIViewRepresentable {
         let width = CGFloat((pickerCount * 5) * 20) + (getRect().width - 30)
         swiftUIView.frame = CGRect(x: 0, y: 0, width: width, height: 50)
         swiftUIView.backgroundColor = nil
-        scrollView.contentOffset.x = offset
+        offset = savedOffset
+        scrollView.contentOffset.x = savedOffset
         scrollView.contentSize = swiftUIView.frame.size
         scrollView.addSubview(swiftUIView)
         scrollView.bounces = false
@@ -61,9 +64,4 @@ struct CustomSlider<Content: View>: UIViewRepresentable {
 
 func getRect() -> CGRect {
     return UIScreen.main.bounds
-}
-func sliderOffsetToString(offset: CGFloat) -> String {
-    let startWeight = 15
-    let progress = offset / 20
-    return "\(startWeight + (Int(progress) * 1))"
 }

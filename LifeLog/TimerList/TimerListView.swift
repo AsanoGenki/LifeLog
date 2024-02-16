@@ -28,8 +28,10 @@ struct TimerListView: View {
     @AppStorage("appBlockAuthority") private var appBlockAuthority = false
     @AppStorage("blockAppSelecton") private var blockAppSelecton = FamilyActivitySelection()
     @AppStorage("countDownIsOn") private var countDownIsOn = false
+    @AppStorage("timerTab") var timerTab: TimerTab = .countUp
     @State private var isShowingAppPicker = false
     let showWidget = WidgetController()
+    let userdefaults = UserDefaults(suiteName: "group.com.DeviceActivityMonitorExtension")
     var body: some View {
         NavigationView {
             ZStack {
@@ -85,6 +87,7 @@ struct TimerListView: View {
                         }
                     }
                 }
+                .scrollDisabled(timerTab == .countDown)
             }
             .gesture(
                 DragGesture()
@@ -125,6 +128,9 @@ struct TimerListView: View {
             }
             .alert("Quick Timer", isPresented: $showStartQuickTimer, actions: {
                 TextField("Title", text: $quickTimerName)
+                    .onChange(of: quickTimerName) { text in
+                        userdefaults!.set(text, forKey: "countUpTimer")
+                    }
                 Button("Start", action: {
                     startTimerDate = Date()
                     countUpViewModel.startTimer()

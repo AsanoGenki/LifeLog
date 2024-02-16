@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct TimeSliderView: View {
-    @AppStorage("timerOffset") var offset: Double = 0
+    @Binding var offset: Double
     @ObservedObject var countDownTimerViewModel: CountDownTimerViewModel
     var body: some View {
         VStack(spacing: 15) {
             let pickerCount = 45
-            CustomSlider(pickerCount: pickerCount, content: {
+            CustomSlider(offset: $offset, pickerCount: pickerCount, content: {
                 HStack(spacing: 0) {
                     ForEach(1...pickerCount, id: \.self) { index in
                         VStack {
@@ -60,7 +60,6 @@ struct TimeSliderView: View {
             .onChange(of: sliderOffsetToString(offset: offset)) { _ in
                 let selectionFeedback = UISelectionFeedbackGenerator()
                 selectionFeedback.selectionChanged()
-                countDownTimerViewModel.changeCountDownMinute(minutes: Int(sliderOffsetToString(offset: offset))!)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: 200)
@@ -72,6 +71,6 @@ struct TimeSliderView_Previews: PreviewProvider {
     @State static var offset: Double = 0
     @StateObject static var countDownTimerViewModel = CountDownTimerViewModel()
     static var previews: some View {
-        TimeSliderView(countDownTimerViewModel: countDownTimerViewModel)
+        TimeSliderView(offset: $offset, countDownTimerViewModel: countDownTimerViewModel)
     }
 }

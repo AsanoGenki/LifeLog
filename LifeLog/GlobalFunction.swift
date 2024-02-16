@@ -29,3 +29,8 @@ func convertDataToColor(data: Data) -> Color? {
     }
     return nil
 }
+func sliderOffsetToString(offset: Double) -> String {
+    let startWeight = 15
+    let progress = offset / 20
+    return "\(startWeight + (Int(progress) * 1))"
+}

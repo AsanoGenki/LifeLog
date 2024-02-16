@@ -52,7 +52,7 @@ struct ContentView: View {
         UITabBar.appearance().backgroundColor = UIColor(Color("whiteBlack"))
         UITabBar.appearance().standardAppearance = appearance
     }
-    @State private var playerOffset: CGFloat = 0
+    @State private var playerOffset: Double = 0
     @AppStorage("showStartView") var showStartView = true
     var body: some View {
         if !showStartView {

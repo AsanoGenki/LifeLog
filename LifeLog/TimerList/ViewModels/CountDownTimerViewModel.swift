@@ -16,9 +16,6 @@ class CountDownTimerViewModel: ObservableObject {
     var timeLeft: Int {
         model.timeLeft
     }
-//    var countDownMinute: Int {
-//        model.countDownMinute
-//    }
     @ObservedObject var notificationViewModel = TimerNotificationViewModel()
     @AppStorage(
         "setMinute",

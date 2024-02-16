@@ -21,6 +21,7 @@ struct TimerList: View {
     @AppStorage("startDate") var startTimerDate = Date()
     let showWidget = WidgetController()
     let container = SwManager()
+    let userdefaults = UserDefaults(suiteName: "group.com.DeviceActivityMonitorExtension")
     var body: some View {
         ForEach(timerItems, id: \.self) { timerItem in
             if timerItem.title?.isEmpty == false && timerItem.icon?.isEmpty == false && timerItem.id != nil {
@@ -50,6 +51,7 @@ struct TimerList: View {
                                 .stroke(Color("borderColor"), lineWidth: 0.5)
                         )
                         .onTapGesture {
+                            userdefaults!.set(timerItem.title, forKey: "countUpTimer")
                             countUpViewModel.startTimer()
                             timerID = timerItem.id
                             startTimerDate = Date()

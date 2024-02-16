@@ -15,7 +15,7 @@ struct TimerView: View {
     @State var createDate = UUID()
     @EnvironmentObject var countDownTimerViewModel: CountDownTimerViewModel
     @AppStorage("timerTitle") var timerTitle = ""
-    @AppStorage("timerOffset") var offset: Double = 0
+    @State var offset: Double = 0
     @AppStorage("startDate") var startTimerDate = Date()
     @AppStorage("countDownIsOn") var countDownIsOn = false
     let userdefaults = UserDefaults(suiteName: "group.com.DeviceActivityMonitorExtension")
@@ -32,18 +32,18 @@ struct TimerView: View {
                     ZStack {
                         ZStack(alignment: .center) {
                             TimeCircleView(countDownTimerViewModel: countDownTimerViewModel)
-                            TimerLabelView(countDownTimerViewModel: countDownTimerViewModel)
+                                TimerLabelView(offset: $offset, countDownTimerViewModel: countDownTimerViewModel)
                         }
                         .frame(minHeight: UIScreen.main.bounds.height * 0.38)
                         .padding(36)
                         .padding(.top, -144)
                         VStack(spacing: 12) {
                             Spacer()
-                            TimeSliderView(countDownTimerViewModel: countDownTimerViewModel)
+                            TimeSliderView(offset: $offset, countDownTimerViewModel: countDownTimerViewModel)
                                 .opacity(countDownIsOn == false ? 1 : 0)
                             BottomButtonView(
                                 countDownTimerViewModel: countDownTimerViewModel,
-                                endDate: $endDate,
+                                offset: $offset, endDate: $endDate,
                                 showingSaveAlert: $showingSaveAlert
                             )
                         }

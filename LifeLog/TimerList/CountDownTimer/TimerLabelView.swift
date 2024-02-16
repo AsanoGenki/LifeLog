@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TimerLabelView: View {
-    @AppStorage("timerOffset") var offset: Double = 0
+    @Binding var offset: Double
     @AppStorage("countDownIsOn") var countDownIsOn = false
     @ObservedObject var countDownTimerViewModel: CountDownTimerViewModel
     var body: some View {
@@ -87,6 +87,6 @@ struct TimerLabelView_Previews: PreviewProvider {
     @State static var result: Int = 0
     @StateObject static var countDownTimerViewModel = CountDownTimerViewModel()
     static var previews: some View {
-        TimerLabelView(countDownTimerViewModel: countDownTimerViewModel)
+        TimerLabelView(offset: $offset, countDownTimerViewModel: countDownTimerViewModel)
     }
 }
